@@ -25,7 +25,7 @@ struct AdminImageView: View {
 					.resizable()
 					.frame(width: 130, height: 120)
 					.offset(y:-40)
-					.padding(.bottom, -5)
+					.padding(.bottom, -3)
 					.padding(.leading)
 					.padding(.top, -45)
 				}else if vm.isLoading{
@@ -33,7 +33,7 @@ struct AdminImageView: View {
 					.resizable()
 					.frame(width: 130, height: 120)
 					.offset(y:-40)
-					.padding(.bottom,-5)
+					.padding(.bottom,-3)
 					.padding(.leading)
 					.padding(.top, -45)
 

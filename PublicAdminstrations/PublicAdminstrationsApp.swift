@@ -11,6 +11,19 @@ import SwiftUI
 struct PublicAdminstrationsApp: App {
 
 	@State private var showLaunchView: Bool = true
+	let navBarAppeareance = UINavigationBarAppearance()
+
+	init(){
+		UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(Color.white)]
+		UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(Color.white)]
+		navBarAppeareance.backgroundColor = UIColor(Color.white)
+
+
+		UINavigationBar.appearance().scrollEdgeAppearance = navBarAppeareance
+		UINavigationBar.appearance().standardAppearance = navBarAppeareance
+
+
+	}
 
 	@StateObject private var vm = PubliAdminstrationsViewModel()
     var body: some Scene {

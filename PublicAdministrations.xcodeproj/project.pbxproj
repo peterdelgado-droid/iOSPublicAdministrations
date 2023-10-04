@@ -29,6 +29,12 @@
 		8203A3262AC4438300AB6ADE /* FavoriteSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8203A3252AC4438300AB6ADE /* FavoriteSelectView.swift */; };
 		8203A3292AC44E8A00AB6ADE /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8203A3282AC44E8A00AB6ADE /* Launch.storyboard */; };
 		8203A32C2AC4501300AB6ADE /* PublicAdminstrationsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8203A32B2AC4501300AB6ADE /* PublicAdminstrationsViewModelTests.swift */; };
+		82540CA12ACC57E40053EDB0 /* SF-Pro-Display-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 82540CA02ACC57E40053EDB0 /* SF-Pro-Display-Regular.ttf */; };
+		825479C32ACC4B84009C1248 /* SF-Pro-Display-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 825479C22ACC4B84009C1248 /* SF-Pro-Display-Bold.ttf */; };
+		828DABD02ACC311400DFDE13 /* ListMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828DABCF2ACC311400DFDE13 /* ListMapView.swift */; };
+		82AEFDA12AC6DDDB0043E9DD /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82AEFDA02AC6DDDB0043E9DD /* DetailViewController.xib */; };
+		82AEFDA52AC6DE3C0043E9DD /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AEFDA42AC6DE3C0043E9DD /* DetailViewController.swift */; };
+		82B7BC0E2ACC51BD00A3F358 /* Helvetica Neue Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 82B7BC0D2ACC51BD00A3F358 /* Helvetica Neue Regular.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +80,12 @@
 		8203A3252AC4438300AB6ADE /* FavoriteSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteSelectView.swift; sourceTree = "<group>"; };
 		8203A3282AC44E8A00AB6ADE /* Launch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
 		8203A32B2AC4501300AB6ADE /* PublicAdminstrationsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicAdminstrationsViewModelTests.swift; sourceTree = "<group>"; };
+		82540CA02ACC57E40053EDB0 /* SF-Pro-Display-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.ttf"; sourceTree = "<group>"; };
+		825479C22ACC4B84009C1248 /* SF-Pro-Display-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Bold.ttf"; sourceTree = "<group>"; };
+		828DABCF2ACC311400DFDE13 /* ListMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMapView.swift; sourceTree = "<group>"; };
+		82AEFDA02AC6DDDB0043E9DD /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		82AEFDA42AC6DE3C0043E9DD /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		82B7BC0D2ACC51BD00A3F358 /* Helvetica Neue Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Helvetica Neue Regular.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +116,9 @@
 		8203A2CE2AC406F400AB6ADE = {
 			isa = PBXGroup;
 			children = (
+				82540CA02ACC57E40053EDB0 /* SF-Pro-Display-Regular.ttf */,
+				82B7BC0D2ACC51BD00A3F358 /* Helvetica Neue Regular.otf */,
+				825479C22ACC4B84009C1248 /* SF-Pro-Display-Bold.ttf */,
 				8203A2D92AC406F400AB6ADE /* PublicAdminstrations */,
 				8203A2EA2AC406F600AB6ADE /* PublicAdminstrationsTests */,
 				8203A2F42AC406F600AB6ADE /* PublicAdminstrationsUITests */,
@@ -206,6 +221,9 @@
 				8203A3142AC4164400AB6ADE /* AdminRowView.swift */,
 				8203A3232AC4333800AB6ADE /* InfoView.swift */,
 				8203A3252AC4438300AB6ADE /* FavoriteSelectView.swift */,
+				82AEFDA02AC6DDDB0043E9DD /* DetailViewController.xib */,
+				82AEFDA42AC6DE3C0043E9DD /* DetailViewController.swift */,
+				828DABCF2ACC311400DFDE13 /* ListMapView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -332,7 +350,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82540CA12ACC57E40053EDB0 /* SF-Pro-Display-Regular.ttf in Resources */,
 				8203A2E22AC406F500AB6ADE /* Preview Assets.xcassets in Resources */,
+				82B7BC0E2ACC51BD00A3F358 /* Helvetica Neue Regular.otf in Resources */,
+				825479C32ACC4B84009C1248 /* SF-Pro-Display-Bold.ttf in Resources */,
+				82AEFDA12AC6DDDB0043E9DD /* DetailViewController.xib in Resources */,
 				8203A2DF2AC406F500AB6ADE /* Assets.xcassets in Resources */,
 				8203A3292AC44E8A00AB6ADE /* Launch.storyboard in Resources */,
 			);
@@ -360,12 +382,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				8203A3062AC4071E00AB6ADE /* PublicAdminstationServices.swift in Sources */,
+				828DABD02ACC311400DFDE13 /* ListMapView.swift in Sources */,
 				8203A3152AC4164400AB6ADE /* AdminRowView.swift in Sources */,
 				8203A3132AC4127200AB6ADE /* HomeView.swift in Sources */,
 				8203A3102AC40F6700AB6ADE /* PublicAdminstrationViewModel.swift in Sources */,
 				8203A3202AC42CB000AB6ADE /* SearchBarView.swift in Sources */,
 				8203A2DD2AC406F400AB6ADE /* ContentView.swift in Sources */,
 				8203A3242AC4333800AB6ADE /* InfoView.swift in Sources */,
+				82AEFDA52AC6DE3C0043E9DD /* DetailViewController.swift in Sources */,
 				8203A3262AC4438300AB6ADE /* FavoriteSelectView.swift in Sources */,
 				8203A31A2AC4202000AB6ADE /* AdminImageService.swift in Sources */,
 				8203A3182AC41E7A00AB6ADE /* AdminImageView.swift in Sources */,

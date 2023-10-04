@@ -20,15 +20,25 @@ struct AdminImageView: View {
 
 	var body: some View {
 		ZStack {
-			if let image = vm.image{
+			if let image = vm.image {
 				Image(uiImage: image)
 					.resizable()
-					.scaledToFit()
-
-			}else if vm.isLoading{
+					.frame(width: 130, height: 120)
+					.offset(y:-40)
+					.padding(.bottom, -10)
+					.padding(.leading)
+					.padding(.top, -45)
+				}else if vm.isLoading{
 				Image("38malaga")
 					.resizable()
-					.scaledToFit()
+					.frame(width: 130, height: 120)
+					.offset(y:-40)
+					.padding(.bottom,-10)
+					.padding(.leading)
+					.padding(.top, -45)
+
+				
+
 
 			} else {
 				Image(systemName: "questionmark")

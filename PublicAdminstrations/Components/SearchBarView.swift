@@ -15,34 +15,30 @@ struct SearchBarView: View {
 		HStack{
 			Image(systemName: "magnifyingglass")
 				.foregroundColor(searchText.isEmpty ?
-								 Color.black : Color.black)
+								 Color.gray : Color.gray)
 
 			TextField("Buscar...", text: $searchText)
 				.foregroundColor(Color.black)
 				.disableAutocorrection(true)
 				.overlay(
-					Image(systemName: "xmark.circle.fill")
+					Image("ubucacion-no-active")
 						.padding()
 						.offset(x: 10)
 						.foregroundColor(Color.black)
-						.opacity(searchText.isEmpty ? 0.0 : 1.0)
-						.onTapGesture {
-							UIApplication.shared.keyWindow?.endEditing(true)
-							searchText = ""
-						}
+						.font(.system(size: 24))
+						.scaleEffect(1.5)
+						
 					,alignment: .trailing)
 		}
-		.frame(width: 180)
-		.font(.headline)
-		.padding()
-		.background(RoundedRectangle(cornerRadius: 25)
-			.fill(Color.white)
-			.shadow(color: Color.black.opacity(0.15),
-					radius: 10, x: 0, y:0
+		.frame(width: 230, height: 15)
+		.font(.custom("SFProDisplay-Regular", size: 20))
 
 
-				   ))
 		.padding()
+		.background(
+			RoundedRectangle(cornerRadius: 5)
+				.stroke(Color.gray, lineWidth: 0.3)
+		)
 	}
 }
 

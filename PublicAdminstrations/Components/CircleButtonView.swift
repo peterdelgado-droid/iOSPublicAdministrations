@@ -13,19 +13,18 @@ struct CircleButtonView: View {
 	let iconName: String
 
     var body: some View {
-		Image(systemName: iconName)
-			.font(.headline)
+		Image("info-icon-green")
 			.foregroundColor(Color.green)
-			.frame(width: 30, height: 30)
+			.font(.system(size: 24))
+			.scaleEffect(1.5)
+			.offset(x: -7, y: -6)
 			.background(
 				Circle()
 					.foregroundColor(Color.white)
 
 			)
-			.shadow(color: Color.green.opacity(0.25),
-					radius: 10, x: 0, y: 0)
-			.padding()
-    }
+
+	}
 }
 
 struct CircleButtonView_Previews: PreviewProvider {

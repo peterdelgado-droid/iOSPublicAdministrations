@@ -31,7 +31,7 @@ struct AdminImageView: View {
 				}else if vm.isLoading{
 				Image("38malaga")
 					.resizable()
-					.frame(width: 130, height: 120)
+					.frame(width: 130, height: 110)
 					.offset(y:-40)
 					.padding(.bottom,-10)
 					.padding(.leading)

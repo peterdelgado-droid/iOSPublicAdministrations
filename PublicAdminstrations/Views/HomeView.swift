@@ -118,7 +118,7 @@ extension HomeView {
 					.listRowInsets(.init(top: 5, leading: 1, bottom: 5, trailing: 1))
 					.listRowSeparator(.hidden)
 			}
-			.frame(height: 15)
+			.frame(height: 2)
 		}
 		.listStyle(PlainListStyle())
 	}

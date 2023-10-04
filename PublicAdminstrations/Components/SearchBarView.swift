@@ -14,6 +14,7 @@ struct SearchBarView: View {
 	var body: some View {
 		HStack{
 			Image(systemName: "magnifyingglass")
+				.opacity(0.5)
 				.foregroundColor(searchText.isEmpty ?
 								 Color.gray : Color.gray)
 

@@ -10,6 +10,8 @@ import SwiftUI
 struct MyUIViewController: UIViewControllerRepresentable {
 	var item: PublicAdministrationModel
 
+	@Environment(\.sizeCategory) var sizeCategory
+
 	func makeUIViewController(context: Context) -> UIViewController {
 
 		let nameLabel = UILabel()

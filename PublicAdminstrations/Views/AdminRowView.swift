@@ -39,13 +39,13 @@ extension AdminRowView {
 	private var centerColumn: some View {
 		VStack {
 			Text(admin.nombre ?? "")
-				.font(.custom("SFProDisplay-Bold", size: 15))
+				.font(.custom("SFProDisplay-Bold", size: 17))
 				.frame(maxWidth: .infinity, alignment: .leading)
 				.padding(.leading, -30)
 				.padding(.top, -115)
 				.padding(.bottom, -55)
 				.fixedSize(horizontal: false, vertical: true)
-
+			Spacer()
 			Text(admin.direccion ?? "")
 				.font(.custom("SFProDisplay-Regular", size: 15))
 				.frame(maxWidth: .infinity, alignment: .leading)
@@ -71,7 +71,7 @@ extension AdminRowView {
 				.foregroundColor(Color.gray)
 				.font(.custom("SFProDisplay-Regular", size: 15))
 		}.padding(.trailing, 20)
-			.padding(.bottom, 60)
+			.padding(.bottom, 100)
 
 	}
 }

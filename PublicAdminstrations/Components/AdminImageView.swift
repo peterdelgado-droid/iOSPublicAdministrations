@@ -23,7 +23,7 @@ struct AdminImageView: View {
 			if let image = vm.image {
 				Image(uiImage: image)
 					.resizable()
-					.frame(width: 130, height: 120)
+					.frame(width: 100, height: 100)
 					.offset(y:-40)
 					.padding(.bottom, -3)
 					.padding(.leading)
@@ -31,16 +31,13 @@ struct AdminImageView: View {
 				}else if vm.isLoading{
 				Image("38malaga")
 					.resizable()
-					.frame(width: 130, height: 120)
+					.frame(width: 100, height: 90)
 					.offset(y:-40)
-					.padding(.bottom,-3)
+					.padding(.bottom,5)
 					.padding(.leading)
 					.padding(.top, -45)
 
-				
-
-
-			} else {
+				} else {
 				Image(systemName: "questionmark")
 			}
 

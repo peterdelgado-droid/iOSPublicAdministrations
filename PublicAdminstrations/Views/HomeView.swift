@@ -115,10 +115,10 @@ extension HomeView {
 		List {
 			ForEach(vm.allAdmins) { admin in
 				AdminRowView(admin: admin)
-					.listRowInsets(.init(top: 5, leading: 1, bottom: 5, trailing: 1))
+					.listRowInsets(.init(top: 10, leading: 10, bottom: 10, trailing: 10))
 					.listRowSeparator(.hidden)
 			}
-			.frame(height: 2)
+
 		}
 		.listStyle(PlainListStyle())
 	}

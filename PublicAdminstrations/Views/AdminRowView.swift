@@ -22,7 +22,7 @@ struct AdminRowView: View {
 		Divider().frame(maxHeight: 10)
 			.overlay(Color(red: 245 / 255, green: 245 / 255, blue: 245 / 255))
 			.padding(.horizontal, -80)
-			.padding(.vertical, -20)
+			.padding(.vertical, -40)
 			
 	}
 }
@@ -41,16 +41,16 @@ extension AdminRowView {
 			Text(admin.nombre ?? "")
 				.font(.custom("SFProDisplay-Bold", size: 17))
 				.frame(maxWidth: .infinity, alignment: .leading)
-				.padding(.leading, -30)
-				.padding(.top, -115)
+				.padding(.leading, -55)
+				.padding(.top, -100)
 				.padding(.bottom, -55)
 				.fixedSize(horizontal: false, vertical: true)
 			Spacer()
 			Text(admin.direccion ?? "")
 				.font(.custom("SFProDisplay-Regular", size: 15))
 				.frame(maxWidth: .infinity, alignment: .leading)
-				.padding(.leading, -30)
-				.padding(.top, -105)
+				.padding(.leading, -55)
+				.padding(.top, -90)
 				.padding(.bottom, -55)
 				.foregroundColor(Color.gray)
 			}

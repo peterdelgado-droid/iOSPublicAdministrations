@@ -10,7 +10,6 @@ import SwiftUI
 struct MyUIViewController: UIViewControllerRepresentable {
 	var item: PublicAdministrationModel
 
-	@Environment(\.sizeCategory) var sizeCategory
 
 	func makeUIViewController(context: Context) -> UIViewController {
 
@@ -56,6 +55,47 @@ struct HomeView: View {
 	@State private var isActive = false
 	@State private var selectedItem: Item? = nil
 
+	
+
+	@Environment(\.horizontalSizeClass) var horizontalSizeClass
+
+	func paddingValue(for size: CGSize) -> CGFloat {
+		let screenWidth = size.width
+
+		switch screenWidth {
+		case ..<321: // iPhone SE (1st generation) and earlier
+			return 1
+		case 321..<375: // iPhone SE (2nd generation) and iPhone 6/6s/7/8
+			return 5
+		case 375..<414: // iPhone 6/6s/7/8 Plus and iPhone X/XS/11 Pro
+			return -20
+		case 414..<428: // iPhone 11/XR/11 Pro Max
+			return 15
+		default: // For future iPhone models or larger screens
+			return -40
+		}
+	}
+
+
+	func fontSize(for size: CGSize) -> CGFloat {
+		let baseFontSize: CGFloat = 24
+		let scaleFactor: CGFloat = 0.8
+
+		let adjustedFontSize = baseFontSize * scaleFactor
+		let availableWidth = size.width
+
+		let font = UIFont.systemFont(ofSize: adjustedFontSize)
+		let fontAttributes = [NSAttributedString.Key.font: font]
+		let textWidth = NSAttributedString(string: "Hello, World!", attributes: fontAttributes).size().width
+
+		let scale = min(1, availableWidth / textWidth)
+		let scaledFontSize = adjustedFontSize * scale
+
+		return scaledFontSize
+	}
+
+
+
     var body: some View {
 		GeometryReader { geometry in
 			VStack {
@@ -65,8 +105,11 @@ struct HomeView: View {
 							Image(systemName: "chevron.left")
 								.font(.largeTitle)
 								.foregroundColor(.white)
-								.offset(x: geometry.size.width * -0.07) // Adjust the offset as needed to be responsive to different phone models)
+								.padding(.leading,paddingValue(for: geometry.size))
 							Text("Administraciones asociadas")
+								.lineLimit(1)
+								.minimumScaleFactor(0.5)
+								.fixedSize(horizontal: false, vertical: true)
 								.foregroundColor(.white)
 								.font(.custom("HelveticaNeue", size: 25))
 						}
@@ -86,17 +129,26 @@ struct HomeView: View {
 				Divider()
 					.overlay(.gray)
 					.offset(y: -12)
-				HStack {
+				HStack(spacing: 3) {
 					CircleButtonView(iconName: "info")
+						.padding(.leading,paddingValue(for: geometry.size))
+						.offset(x: -7)
 						.onTapGesture {
 							showInfo.toggle()
 						}
 					SearchBarView(searchText: $vm.searchText)
 						.offset(y: -6)
 					Text("\(vm.allAdmins.count) admin.")
-						.font(.custom("SFProDisplay-Regular", size: 20))
+
+						.lineLimit(1)
+						.font(.system(size: fontSize(for: geometry.size)))
 						.foregroundColor(Color.green)
-						.offset(x: 9, y: -6)
+						.offset(x: 13, y: -6)
+						.padding(.trailing,paddingValue(for: geometry.size))
+						.fixedSize(horizontal: false, vertical: true)
+
+
+
 
 				}
 				if showInfo {
@@ -104,6 +156,7 @@ struct HomeView: View {
 
 				}
 				allAdminsList
+				
 				
 			}
 		}
@@ -115,12 +168,19 @@ extension HomeView {
 		List {
 			ForEach(vm.allAdmins) { admin in
 				AdminRowView(admin: admin)
-					.listRowInsets(.init(top: 10, leading: 10, bottom: 10, trailing: 10))
-					.listRowSeparator(.hidden)
-			}
 
-		}
-		.listStyle(PlainListStyle())
+					.listRowSeparator(.hidden)
+					.padding(.top, 20)
+					.padding(.bottom, 60)
+					.padding(.leading, 20)
+
+
+				
+				
+			}.frame(height: 45)
+}
+.listStyle(PlainListStyle())
+
 	}
 
 }

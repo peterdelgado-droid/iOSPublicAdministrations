@@ -12,18 +12,35 @@ struct AdminRowView: View {
 	let admin: PublicAdministrationModel
 	@State private var isHeartToggled = false
 
+	func paddingValue(for size: CGSize) -> CGFloat {
+		if size.width <= 375 {
+			return -30
+		} else {
+			return 0
+		}
+	}
+
+
     var body: some View {
 		HStack(spacing: 5) {
 				leftColumn
 				Spacer()
-				centerColumn
-				rightColumn
+				//centerColumn
+				//rightColumn
 			}
-		Divider().frame(maxHeight: 10)
-			.overlay(Color(red: 245 / 255, green: 245 / 255, blue: 245 / 255))
-			.padding(.horizontal, -80)
-			.padding(.vertical, -40)
-			
+		
+
+		Rectangle()
+			.frame(height: 10)
+			.foregroundColor(Color(red: 245 / 255, green: 245 / 255, blue: 245 / 255))
+			.edgesIgnoringSafeArea(.horizontal)
+			.padding(.top, 15)
+			.padding(.horizontal, -40)
+			.padding(.vertical, 5)
+			.padding(.bottom,-6)
+		
+
+
 	}
 }
 
@@ -31,9 +48,50 @@ struct AdminRowView: View {
 extension AdminRowView {
 
 	private var leftColumn: some View {
-			AdminImageView(admin:admin)
-				.frame(maxWidth: .infinity, alignment: .leading)
+			HStack (spacing: 30) {
+				AdminImageView(admin:admin)
+					.frame(width: 80, height: 90)
+					.padding(.top)
+					.padding(.leading)
+					.padding(.bottom)
+					.scaledToFit()
+				VStack(alignment:.leading) {
+					Text(admin.nombre ?? "")
+						.font(.custom("SFProDisplay-Bold", size: 17))
+						.fixedSize(horizontal: false, vertical: true)
+						.frame(minWidth: 30)
+						.lineLimit(1)
+						.minimumScaleFactor(0.5)
 
+
+					Text(admin.direccion ?? "")
+						.font(.custom("SFProDisplay-Regular", size: 15))
+						.fixedSize(horizontal: false, vertical: true)
+					
+						.minimumScaleFactor(0.5)
+
+				}.offset(y:-23)
+				Spacer()
+				VStack(alignment:.center) {
+					Image(systemName: isHeartToggled ? "heart.fill" : "heart")
+						.resizable()
+						.aspectRatio(contentMode: .fit)
+						.frame(width: 25, height: 25)
+						.foregroundColor(isHeartToggled ? .green : .gray)
+						.onTapGesture {
+							self.isHeartToggled.toggle()
+						}
+
+					Text("Favorita")
+						.foregroundColor(Color.gray)
+						.font(.custom("SFProDisplay-Regular", size: 15))
+				}.padding(.trailing, -20)
+
+			}.padding(.top)
+			.padding(.leading, -20)
+		
+
+		
 	}
 
 	private var centerColumn: some View {
